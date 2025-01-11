@@ -1,0 +1,32 @@
+// ==UserScript==
+// @name         Auto Clicker
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Simple auto-clicker for web pages
+// @author       You
+// @match        *://*/*  // This will run on all websites
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Set the interval between clicks in milliseconds (1000ms = 1 second)
+    const clickInterval = 1000; // Adjust this value for faster/slower clicks
+
+    // Function to simulate a mouse click
+    function simulateClick() {
+        // Try to find a button or element to click
+        let button = document.querySelector('button'); // Select the first button element
+        if (button) {
+            button.click(); // Click the button
+            console.log("Button clicked!");
+        } else {
+            console.log("No button found!");
+        }
+    }
+
+    // Start auto-clicking with the given interval
+    setInterval(simulateClick, clickInterval); // Call simulateClick every 'clickInterval' milliseconds
+
+})();
